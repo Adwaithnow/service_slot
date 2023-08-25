@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: "Plumbing",
         icon: "assets/icons/icons8-plumbing-100.png",
         onTap: () {
-          AutoRouter.of(context).push(const AppointmentBookingScreen());
+          AutoRouter.of(context).push(const BookingHistoryScreen());
         },
       ),
       MenuItemType(

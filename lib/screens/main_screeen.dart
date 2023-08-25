@@ -15,12 +15,6 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   GlobalKey<AutoRouterState> innerRouterKey = GlobalKey<AutoRouterState>();
-  String? path;
-  @override
-  void didChangeDependencies() {
-    path = AutoRouter.of(context).topRoute.name;
-    super.didChangeDependencies();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +32,8 @@ class _MainScreenState extends State<MainScreen> {
             children: [
               CustomBottomNavigationBarItem(
                 icon: CupertinoIcons.home,
-                isActive: context.topRoute.name == HomeScreen.name,
+                isActive: (context.topRoute.name == HomeScreen.name) ||
+                    context.topRoute.name == 'MainScreen',
                 onPressed: () {
                   AutoRouter.of(context).push(const HomeScreen());
                 },

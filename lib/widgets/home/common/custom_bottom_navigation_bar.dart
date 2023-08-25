@@ -6,9 +6,11 @@ class CustomBottomNavigationBarItem extends StatelessWidget {
       required this.isActive,
       required this.onPressed,
       required this.label,
-      required this.icon});
+      required this.icon,
+      this.refreshAction});
   final bool isActive;
   final VoidCallback onPressed;
+  final VoidCallback? refreshAction;
   final String label;
   final IconData icon;
 
@@ -16,7 +18,7 @@ class CustomBottomNavigationBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       customBorder: const CircleBorder(),
-      onTap: onPressed,
+      onTap: isActive ? refreshAction : onPressed,
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
