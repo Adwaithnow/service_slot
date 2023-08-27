@@ -6,16 +6,18 @@ class HomeGridTile extends StatelessWidget {
     super.key,
     required this.menuItem,
     required this.cardColor,
+    required this.onTap,
   });
 
   final MenuItemType menuItem;
   final Color cardColor;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(15),
-      onTap: menuItem.onTap,
+      onTap: onTap,
       child: Ink(
         decoration: BoxDecoration(
           color: cardColor,

@@ -13,6 +13,14 @@ class HomeScreenUtils {
     }
   }
 
+  static List<bool> containsBookingHistoryTabItem(
+      {required List<String> routeNames, required String currentpath}) {
+    return routeNames.map((section) {
+      RegExp regExp = RegExp("^/$section/?([a-zA-Z0-9_-]+)?");
+      return regExp.hasMatch(currentpath);
+    }).toList();
+  }
+
   static List<Color> cardBgColors = [
     const Color(0xFFEEF2FF),
     const Color(0xFFFCEDF5),

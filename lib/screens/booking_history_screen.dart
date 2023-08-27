@@ -1,7 +1,9 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:service_slot/screens/appointment_booking_screen.dart';
+import 'package:service_slot/routes/auto_router.gr.dart';
+import 'package:service_slot/widgets/home/common/custom_app_bar.dart';
+// import 'package:service_slot/screens/appointment_booking_screen.dart';
 
 @RoutePage(name: "BookingHistoryScreen")
 class BookingHistoryScreen extends StatelessWidget {
@@ -10,20 +12,25 @@ class BookingHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: TextButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const AppointmentBookingScreen()));
-                },
-                child: Text("Ok Bye")),
+      appBar: CustomAppBar(
+        title: "History",
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.router.push(
+                AppointmentBookingScreen(),
+              );
+            },
+            icon: const Icon(
+              CupertinoIcons.add_circled,
+            ),
           )
         ],
+      ),
+      body: const Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [],
       ),
     );
   }
