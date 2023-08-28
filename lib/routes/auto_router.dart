@@ -19,7 +19,7 @@ class AppRouter extends $AppRouter {
         CustomRoute(
           page: MainScreen.page,
           transitionsBuilder: TransitionsBuilders.slideBottom,
-          durationInMilliseconds: 400,
+          durationInMilliseconds: 300,
           path: '/',
           children: [
             CustomRoute(
