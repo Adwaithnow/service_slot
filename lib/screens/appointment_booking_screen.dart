@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:service_slot/models/home_menu_item_type.dart';
 import 'package:service_slot/theme/values.dart';
 import 'package:service_slot/utils/utils.dart';
-import 'package:service_slot/widgets/home/common/custom_app_bar.dart';
+import 'package:service_slot/widgets/common/custom_app_bar.dart';
+import 'package:service_slot/widgets/common/custom_button.dart';
+import 'package:service_slot/widgets/common/custom_text_form_field.dart';
 
 @RoutePage(name: "AppointmentBookingScreen")
 class AppointmentBookingScreen extends StatefulWidget {
@@ -156,67 +158,14 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.7,
-                  child: FilledButton(
-                    style: FilledButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                    ),
-                    onPressed: () {
-                      if (_form.currentState!.validate()) {
-                        //TODO API CALL
-                      }
-                    },
-                    child: const Text('Add booking'),
+                  child: CustomButton(
+                    form: _form,
+                    label: 'Add booking',
+                    onPressed: () {},
                   ),
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    super.key,
-    required this.hintText,
-    this.controller,
-    this.validator,
-    this.keyboardType,
-    this.obscureText,
-    this.autovalidateMode,
-    this.textInputAction,
-  });
-  final String hintText;
-  final TextEditingController? controller;
-  final String? Function(String?)? validator;
-  final TextInputType? keyboardType;
-  final bool? obscureText;
-  final AutovalidateMode? autovalidateMode;
-  final TextInputAction? textInputAction;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      autovalidateMode: autovalidateMode,
-      textInputAction: textInputAction,
-      controller: controller,
-      validator: validator,
-      keyboardType: keyboardType,
-      obscureText: obscureText ?? false,
-      decoration: InputDecoration(
-        labelText: hintText,
-        labelStyle: TextStyle(color: AppColors.primary),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.primary),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(10),
-          ),
-        ),
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
           ),
         ),
       ),

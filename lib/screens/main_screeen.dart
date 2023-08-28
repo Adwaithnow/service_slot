@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:service_slot/routes/auto_router.gr.dart';
 import 'package:service_slot/utils/utils.dart';
-import 'package:service_slot/widgets/home/common/custom_bottom_navigation_bar.dart';
+import 'package:service_slot/widgets/common/custom_bottom_navigation_bar.dart';
 
 @RoutePage(name: "MainScreen")
 class MainScreen extends StatefulWidget {

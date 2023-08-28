@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:service_slot/models/home_menu_item_type.dart';
 import 'package:service_slot/routes/auto_router.gr.dart';
-import 'package:service_slot/widgets/home/common/custom_app_bar.dart';
+import 'package:service_slot/widgets/common/custom_app_bar.dart';
 // import 'package:service_slot/screens/appointment_booking_screen.dart';
 
 @RoutePage(name: "BookingHistoryScreen")
