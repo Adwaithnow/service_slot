@@ -53,6 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               CustomTextFormField(
                 controller: passwordController,
+                obscureText: true,
                 textInputAction: TextInputAction.next,
                 validator: (name) => ValidationUtils.fullNameValidation(name),
                 autovalidateMode: AutovalidateMode.onUserInteraction,

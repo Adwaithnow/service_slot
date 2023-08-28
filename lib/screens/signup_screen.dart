@@ -63,8 +63,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               CustomTextFormField(
                 controller: passwordController,
+                obscureText: true,
                 textInputAction: TextInputAction.next,
-                validator: (name) => ValidationUtils.fullNameValidation(name),
+                validator: (password) =>
+                    ValidationUtils.passwordValidation(password),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 hintText: 'Password',
               ),
@@ -72,9 +74,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 10,
               ),
               CustomTextFormField(
-                controller: passwordController,
+                controller: confirmpasswordController,
+                obscureText: true,
                 textInputAction: TextInputAction.next,
-                validator: (name) => ValidationUtils.fullNameValidation(name),
+                validator: (confirmPassword) =>
+                    ValidationUtils.confirmPasswordValidation(
+                        confirmPassword, passwordController.text),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 hintText: 'Confirm password',
               ),

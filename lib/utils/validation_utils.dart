@@ -111,4 +111,39 @@ class ValidationUtils {
     // the password is valid
     return null;
   }
+
+  static String? passwordValidation(String? value) {
+    // Check if this field is empty
+    if (value == null || value.trim().isEmpty) {
+      return 'This field is required';
+    }
+
+    // check length of password
+    if (value.length < 8) {
+      return "Password must be atleast 8 character";
+    }
+
+    // the password is valid
+    return null;
+  }
+
+  static String? confirmPasswordValidation(String? value, String confirm) {
+    // Check if this field is empty
+    if (value == null || value.trim().isEmpty) {
+      return 'This field is required';
+    }
+
+    // check length of password
+
+    if (value.length < 8) {
+      return "Password must be atleast 8 character";
+    }
+
+    //check confirm password and password same
+    if (confirm != value) {
+      return "Password and confirm password must be same";
+    }
+    // the password is valid
+    return null;
+  }
 }
