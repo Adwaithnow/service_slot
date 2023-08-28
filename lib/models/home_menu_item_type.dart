@@ -1,4 +1,3 @@
-
 class MenuItemType {
   MenuItemType({
     required this.title,
@@ -11,7 +10,7 @@ class MenuItemType {
   // final VoidCallback onTap;
 }
 
-class HomeScreenItems{
+class HomeScreenItems {
   static List<MenuItemType> menuItems = [
     MenuItemType(
       title: "Plumbing",
@@ -40,7 +39,7 @@ class HomeScreenItems{
     ),
     MenuItemType(
       title: "Painting",
-      icon: "assets/icons/icons8-plumbing-100.png",
+      icon: "assets/icons/icons8-painting-100.png",
       value: "painting",
     ),
     MenuItemType(

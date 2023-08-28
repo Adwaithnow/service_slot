@@ -11,12 +11,14 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText,
     this.autovalidateMode,
     this.textInputAction,
+    this.maxLines = 1,
   });
   final String hintText;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
   final bool? obscureText;
+  final int maxLines;
   final AutovalidateMode? autovalidateMode;
   final TextInputAction? textInputAction;
 
@@ -26,7 +28,9 @@ class CustomTextFormField extends StatelessWidget {
       autovalidateMode: autovalidateMode,
       textInputAction: textInputAction,
       controller: controller,
+      minLines: 1,
       validator: validator,
+      maxLines: maxLines,
       keyboardType: keyboardType,
       obscureText: obscureText ?? false,
       decoration: InputDecoration(

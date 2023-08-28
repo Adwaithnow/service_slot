@@ -20,6 +20,10 @@ class AppRouter extends $AppRouter {
           page: SignUpScreen.page,
           path: '/SignUpScreen',
         ),
+        AutoRoute(
+          page: AboutScreen.page,
+          path: '/AboutScreen',
+        ),
         CustomRoute(
           page: MainScreen.page,
           transitionsBuilder: TransitionsBuilders.slideBottom,

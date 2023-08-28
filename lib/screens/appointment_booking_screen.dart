@@ -126,9 +126,10 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                 ),
                 CustomTextFormField(
                   controller: addressController,
+                  maxLines: 4,
+                  textInputAction: TextInputAction.newline,
                   validator: (address) =>
                       ValidationUtils.addressValidation(address),
-                  textInputAction: TextInputAction.next,
                   hintText: "Address",
                 ),
                 const SizedBox(
@@ -147,8 +148,9 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                 ),
                 CustomTextFormField(
                   controller: remarkController,
-                  textInputAction: TextInputAction.go,
-                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.newline,
+                  maxLines: 4,
+                  keyboardType: TextInputType.multiline,
                   validator: (remark) =>
                       ValidationUtils.remarkValidation(remark),
                   hintText: "Remark",

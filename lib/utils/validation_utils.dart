@@ -101,12 +101,12 @@ class ValidationUtils {
   }
 
   static String? remarkValidation(String? remark) {
-    // Check if this field is empty
-    if (remark == null || remark.trim().isEmpty) {
-      return 'This field is required';
+    // Check if this field is null
+    if (remark == null) {
+      return null;
     }
     if (remark.length > 250) {
-      return 'post decription exceed 250 character limit';
+      return 'remark exceed 250 character limit';
     }
     // the password is valid
     return null;
