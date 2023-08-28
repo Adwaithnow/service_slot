@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:service_slot/routes/auto_router.gr.dart';
 import 'package:service_slot/utils/utils.dart';
 import 'package:service_slot/widgets/common/custom_app_bar.dart';
 import 'package:service_slot/widgets/common/custom_button.dart';
