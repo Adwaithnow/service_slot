@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:service_slot/models/home_menu_item_type.dart';
 import 'package:service_slot/routes/auto_router.gr.dart';
+import 'package:service_slot/utils/utils.dart';
 import 'package:service_slot/widgets/common/custom_app_bar.dart';
 // import 'package:service_slot/screens/appointment_booking_screen.dart';
 
@@ -39,13 +40,10 @@ class BookingHistoryScreen extends StatelessWidget {
             width: double.maxFinite,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
-              gradient: const LinearGradient(
+              gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
-                colors: [
-                  Color(0xffe9eeff),
-                  Color(0xfffaf8ff),
-                ],
+                colors: HomeScreenUtils.getGardientColor(index),
               ),
             ),
             child: Padding(

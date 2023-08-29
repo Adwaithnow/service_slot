@@ -35,57 +35,69 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Login'),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Form(
-          key: _form,
-          child: Column(
-            children: [
-              CustomTextFormField(
-                controller: emailController,
-                textInputAction: TextInputAction.next,
-                validator: (email) => ValidationUtils.emailValidation(email),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                hintText: 'Email',
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              CustomTextFormField(
-                controller: passwordController,
-                obscureText: true,
-                textInputAction: TextInputAction.next,
-                validator: (name) => ValidationUtils.fullNameValidation(name),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                hintText: 'Password',
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.7,
-                child: CustomButton(
-                    form: _form,
-                    onPressed: () {
-                      AutoRouter.of(context).replace(const HomeScreen());
-                    },
-                    label: "Login"),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Don't have an account?"),
-                  TextButton(
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Form(
+            key: _form,
+            child: Column(
+              children: [
+                ClipOval(
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextFormField(
+                  controller: emailController,
+                  textInputAction: TextInputAction.next,
+                  validator: (email) => ValidationUtils.emailValidation(email),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  hintText: 'Email',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextFormField(
+                  controller: passwordController,
+                  obscureText: true,
+                  textInputAction: TextInputAction.go,
+                  validator: (name) => ValidationUtils.fullNameValidation(name),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  hintText: 'Password',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: CustomButton(
+                      form: _form,
                       onPressed: () {
-                        context.router.push(const SignUpScreen());
+                        AutoRouter.of(context).replace(const HomeScreen());
                       },
-                      child: const Text("Sign up"))
-                ],
-              ),
-            ],
+                      label: "Login"),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Don't have an account?"),
+                    TextButton(
+                        onPressed: () {
+                          context.router.push(const SignUpScreen());
+                        },
+                        child: const Text("Sign up"))
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -31,4 +31,15 @@ class HomeScreenUtils {
     int computedIndex = index % cardBgColors.length;
     return cardBgColors[computedIndex];
   }
+
+  static List<List<Color>> gradientColors = const [
+    [Color(0xffe9eeff), Color(0xfffaf8ff)],
+    [Color(0xffedfffa), Color(0xffffebf3)],
+    [Color(0xfffffaf3), Color(0xffecefff)],
+    [Color(0xfffffaf3), Color(0xffecefff)],
+  ];
+  static List<Color> getGardientColor(int index) {
+    int computedIndex = index % cardBgColors.length;
+    return gradientColors[computedIndex];
+  }
 }

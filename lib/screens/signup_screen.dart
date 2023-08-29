@@ -21,7 +21,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   late String selectedMenu;
 
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
-  
+
   @override
   void initState() {
     fullnameController = TextEditingController();
@@ -35,67 +35,79 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Signup'),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Form(
-          key: _form,
-          child: Column(
-            children: [
-              CustomTextFormField(
-                controller: emailController,
-                textInputAction: TextInputAction.next,
-                validator: (email) => ValidationUtils.emailValidation(email),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                hintText: 'Email',
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              CustomTextFormField(
-                controller: fullnameController,
-                textInputAction: TextInputAction.next,
-                validator: (name) => ValidationUtils.fullNameValidation(name),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                hintText: 'Full name',
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              CustomTextFormField(
-                controller: passwordController,
-                obscureText: true,
-                textInputAction: TextInputAction.next,
-                validator: (password) =>
-                    ValidationUtils.passwordValidation(password),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                hintText: 'Password',
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              CustomTextFormField(
-                controller: confirmpasswordController,
-                obscureText: true,
-                textInputAction: TextInputAction.next,
-                validator: (confirmPassword) =>
-                    ValidationUtils.confirmPasswordValidation(
-                        confirmPassword, passwordController.text),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                hintText: 'Confirm password',
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.7,
-                child: CustomButton(
-                    form: _form,
-                    onPressed: () {
-                      //TODO Sign up
-                    },
-                    label: "Sign up"),
-              ),
-            ],
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Form(
+            key: _form,
+            child: Column(
+              children: [
+                ClipOval(
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextFormField(
+                  controller: emailController,
+                  textInputAction: TextInputAction.next,
+                  validator: (email) => ValidationUtils.emailValidation(email),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  hintText: 'Email',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextFormField(
+                  controller: fullnameController,
+                  textInputAction: TextInputAction.next,
+                  validator: (name) => ValidationUtils.fullNameValidation(name),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  hintText: 'Full name',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextFormField(
+                  controller: passwordController,
+                  obscureText: true,
+                  textInputAction: TextInputAction.next,
+                  validator: (password) =>
+                      ValidationUtils.passwordValidation(password),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  hintText: 'Password',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextFormField(
+                  controller: confirmpasswordController,
+                  obscureText: true,
+                  textInputAction: TextInputAction.next,
+                  validator: (confirmPassword) =>
+                      ValidationUtils.confirmPasswordValidation(
+                          confirmPassword, passwordController.text),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  hintText: 'Confirm password',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: CustomButton(
+                      form: _form,
+                      onPressed: () {
+                        //TODO Sign up
+                      },
+                      label: "Sign up"),
+                ),
+              ],
+            ),
           ),
         ),
       ),
