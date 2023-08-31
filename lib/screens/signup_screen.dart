@@ -18,7 +18,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       passwordController,
       confirmpasswordController,
       fullnameController;
-  late String selectedMenu;
+
 
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
 
